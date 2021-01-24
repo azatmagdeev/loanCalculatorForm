@@ -8,228 +8,407 @@
 </head>
 
 <body>
-<div class="elementor-widget-container">
-    <div class="screen_calculator">
-        <div class="mainCalculator mainCalculator_new_client_limit mainCalculator_limit">
-<!--            заголовок-->
-            <div class="mainCalculator__row">
-                <div class="mainCalculator__heading"
-                     style="text-align: center; font-size:24px;">
-                    <br>Первый заём <span style="color: #f51a1a;"> по одному документу!</span>
-                </div>
+<div class="screen_calculator">
+    <div class="mainCalculator mainCalculator_new_client_limit mainCalculator_limit">
+        <!--            заголовок-->
+        <div class="mainCalculator__row">
+            <div class="mainCalculator__heading"
+                 style="text-align: center; font-size:24px;">
+                <br>Первый заём <span style="color: #f51a1a;"> по одному документу!</span>
             </div>
-<!--            выберите сумму-->
-            <div class="mainCalculator__row">
-                <div class="mainCalculator__box mainCalculator__box_1">
-                    <div class="mainCalculator__title"
-                         data-name="amount">Выберите сумму
-                    </div>
-                    <div class="mainCalculatorDynamic"><input
-                            type="text" name="money" value="9000"
-                            class="mainCalculatorDynamic__input"
-                            id="money">
-                        <div class="mainCalculatorDynamic__after">
-                            руб.
-                        </div>
-                    </div>
-                    <div class="mainCalculator__help">
-                        <div class="help__tooltip mainCalculator__tooltip tooltipstered"></div>
-                    </div>
-                    <div class="mainCalculator__action">
-                        <div class="mainCalculator__background">
-                            <div class="mainCalculator__slider mainCalculator__sum ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                                <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"
-                                     style="width: 48.4536%;"></div>
-                                <span class="ui-slider-handle ui-state-default ui-corner-all"
-                                      tabindex="0"
-                                      style="left: 48.4536%;"></span>
-                            </div>
-                        </div>
-                        <input type="hidden" name=" " value="9000"
-                               class="mainCalculator__val">
-                        <input type="hidden" name=" " value="1500"
-                               class="mainCalculator__min">
-                        <input type="hidden" name=" " value="70000"
-                               class="mainCalculator__max">
-                        <input type="hidden" name=" " value="30000"
-                               class="mainCalculator__mid">
-                        <input type="hidden" name=" " value="500"
-                               class="mainCalculator__step">
-                        <input type="hidden" name=" " value="руб."
-                               class="mainCalculator__sign">
-                        <input type="hidden" name=" " value="руб."
-                               class="mainCalculator__after">
-                        <input type="hidden" name=" " value="30000"
-                               class="mainCalculator__server">
-                    </div>
-                    <div class="mainCalculator__legend">
-                        <div class="mainCalculatorLabel_left mainCalculator__label">
-                            <span class="mainCalculatorLabel__min mainCalculator__label__value">1 500</span><span
-                                class="mainCalculator__label__sign"></span>
-                        </div>
-                        <div class="mainCalculatorLabel_middle mainCalculator__label">
-                            30 000
-                        </div>
-                        <div class="mainCalculatorLabel_right mainCalculator__label">
-                            <span class="mainCalculatorLabel__max mainCalculator__label__value">70 000</span><span
-                                class="mainCalculator__label__sign"></span>
-                        </div>
-                        <div class="mainCalculator__alert">Сумма
-                            свыше 10000 руб. доступна со второго
-                            займа
-                        </div>
-                    </div>
+        </div>
+        <!--            выберите сумму-->
+        <div class="mainCalculator__row">
+            <div class="mainCalculator__box mainCalculator__box_1">
+                <div class="mainCalculator__title"
+                     data-name="amount">Выберите сумму
                 </div>
-            </div>
-<!--            выберите срок-->
-            <!--  <div class="mainCalculator__row">
-                  <div class="mainCalculator__box mainCalculator__box_2 mainCalculator__box_swap">
-                      <div class="mainCalculator__title"
-                           data-name="days">Выберите срок
-                      </div>
-                      <div class="mainCalculatorDynamic"><input
-                              type="text" name="days" value="15"
-                              class="mainCalculatorDynamic__input"
-                              id="days">
-                          <div class="mainCalculatorDynamic__after">
-                              недель
-                          </div>
-                      </div>
-                      <div class="mainCalculator__action">
-                          <div class="mainCalculator__background">
-                              <div class="mainCalculator__date mainCalculator__slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                                  <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"
-                                       style="width: 43.956%;"></div>
-                                  <span class="ui-slider-handle ui-state-default ui-corner-all"
-                                        tabindex="0"
-                                        style="left: 43.956%;"></span>
-                              </div>
-                          </div>
-                          <input type="hidden" name=" " value="15"
-                                 class="mainCalculator__val">
-                          <input type="hidden" name=" " value="5"
-                                 class="mainCalculator__min">
-                          <input type="hidden" name=" " value="126"
-                                 class="mainCalculator__max">
-                          <input type="hidden" name=" " value="30"
-                                 class="mainCalculator__mid">
-                          <input type="hidden" name=" " value="70"
-                                 class="mainCalculator__next">
-                          <input type="hidden" name=" " value="1"
-                                 class="mainCalculator__step">
-                          <input type="hidden" name=" " value="нед."
-                                 class="mainCalculator__sign">
-                          <input type="hidden" name=" " value="недель"
-                                 class="mainCalculator__after">
-                          <input type="hidden" name=" " value="10"
-                                 class="mainCalculator__server">
-                      </div>
-                      <div class="mainCalculator__legend">
-                          <div class="mainCalculatorLabel_left mainCalculator__label">
-                              <span class="mainCalculatorLabel__min mainCalculator__label__value">5</span><span
-                                  class="mainCalculator__label__sign"> дней</span>
-                          </div>
-                          <div class="mainCalculatorLabel_middle mainCalculator__label">
-                              10 недель
-                          </div>
-                          <div class="mainCalculatorLabel_right mainCalculator__label">
-                              <span class="mainCalculatorLabel__max mainCalculator__label__value">18</span><span
-                                  class="mainCalculator__label__sign"> недель</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>-->
-<!--            получить деньги-->
-            <div class="mainCalculator__row mainCalculator__row-last">
-                <div class="mainCalculator__info">
-                    <div class="mainCalculator__center">
-                        <a href="#" class="btn btn_red mainCalculator__submit">
-                            Получить деньги
-                        </a>
-                    </div>
-                    <div class="mainCalculator__info__col mainCalculatorInfo__col_1">
-                        <div class="mainCalculator__info__item">
-                            <div class="mainCalculator__info__title">
-                                Вы берете
-                            </div>
-                            <div class="mainCalculator__info__data">
-                                <span class="mainCalculator__info__value">51 000</span><span
-                                    class="mainCalculator__info__label"> руб.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mainCalculator__info__col mainCalculatorInfo__col_2">
-                        <div class="mainCalculator__info__item">
-                            <div class="mainCalculator__info__title">
-                                До (включительно)
-                            </div>
-                            <div class="mainCalculator__info__data">
-                                <span class="mainCalculator__info__value">28 </span>
-                                <span class="mainCalculator__info__label">января, 2021</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mainCalculator__info__col mainCalculatorInfo__col_3 new">
-                        <div class="mainCalculator__info__item">
-                            <div class="mainCalculator__info__title">
-                                Вы возвращаете
-                            </div>
-                            <div class="mainCalculator__info__data">
-                                <div class="mainCalculator__info__data_new"
-                                     style="display: none;">
-                                    <span class="mainCalculator__info__value">56 100</span>
-                                    <span class="mainCalculator__info__label"> руб.</span>
-                                </div>
-                                <div class="mainCalculator__info__data_default">
-                                    <span class="mainCalculator__info__value">56 100</span>
-                                    <span class="mainCalculator__info__label"> руб.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="default mainCalculator__info__col mainCalculatorInfo__col_4">
-                        <div class="mainCalculator__info__item">
-                            <div class="mainCalculator__info__title">
-                                Платеж раз в 2 недели
-                            </div>
-                            <div class="mainCalculator__info__data">
-                                <div class="mainCalculator__info__data_new">
-                                    <span class="mainCalculator__info__value"></span>
-                                    <span class="mainCalculator__info__label"> руб.</span>
-                                </div>
+                <div class="mainCalculatorDynamic">
+                    <input type="text" name="money" value="9000"
+                           class="mainCalculatorDynamic__input"
+                           id="money">
+                    <div class="mainCalculatorDynamic__after">руб.</div>
+                </div>
+                <div class="mainCalculator__help">
+                    <div class="help__tooltip mainCalculator__tooltip tooltipstered"></div>
+                </div>
+                <style>
+                    input[type=range] {
+                        -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+                        width: 100%; /* Specific width is required for Firefox. */
+                        background: transparent; /* Otherwise white in Chrome */
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
 
-                                <div class="mainCalculator__info__data_default">
-                                    <span class="mainCalculator__info__value"></span>
-                                    <span class="mainCalculator__info__label"> руб.</span>
-                                </div>
+                    input[type=range]::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                    }
+
+                    input[type=range]:focus {
+                        outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+                    }
+
+                    input[type=range]::-ms-track {
+                        width: 100%;
+                        cursor: pointer;
+
+                        /* Hides the slider so custom styles can be added */
+                        background: transparent;
+                        border-color: transparent;
+                        color: transparent;
+                    }
+
+                    /* Special styling for WebKit/Blink */
+                    input[type=range]::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        border: none;
+                        height: 14px;
+                        width: 14px;
+                        border-radius: 50%;
+                        background: #d4c400;
+                        cursor: pointer;
+                        margin-top: -5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+                        box-shadow: 0 0 0 7px #d4c40080; /* Add cool effects to your sliders! */
+                        transition: box-shadow;
+                        transition-duration: .2s;
+                    }
+
+                    input[type=range]::-webkit-slider-thumb:hover {
+                        box-shadow: 0 0 0 10px #d4c40080;
+                    }
+
+                    /* All the same stuff for Firefox */
+                    input[type=range]::-moz-range-thumb {
+                        /*-webkit-appearance: none;*/
+                        border: none;
+                        height: 14px;
+                        width: 14px;
+                        border-radius: 50%;
+                        background: #d4c400;
+                        cursor: pointer;
+                        /*margin-top: -14px; !* You need to specify a margin in Chrome, but in Firefox and IE it is automatic *!*/
+                        box-shadow: 0 0 0 7px #d4c40080; /* Add cool effects to your sliders! */
+                        transition: box-shadow;
+                        transition-duration: .2s;
+                    }
+
+                    input[type=range]::-moz-range-thumb:hover {
+                        box-shadow: 0 0 0 10px #d4c40080;
+                    }
+
+                    /* All the same stuff for IE */
+                    input[type=range]::-ms-thumb {
+                        border: none;
+                        height: 14px;
+                        width: 14px;
+                        border-radius: 50%;
+                        background: #d4c400;
+                        cursor: pointer;
+                        margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+                        box-shadow: 0 0 0 7px #d4c40080; /* Add cool effects to your sliders! */
+                        transition: box-shadow;
+                        transition-duration: .2s;
+                    }
+
+                    input[type=range]::-ms-thumb:hover {
+                        box-shadow: 0 0 0 10px #d4c40080;
+                    }
+
+                    input[type=range]::-webkit-slider-runnable-track {
+                        /*width: 100%;*/
+                        height: 4px;
+                        cursor: pointer;
+                        /*box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;*/
+                        background: #e5e5e5;
+                        border-radius: 2px;
+                        border: none;
+                    }
+
+                    /*label.range {*/
+                    /*    position: relative;*/
+                    /*}*/
+
+                    /*label.range .fill {*/
+                    /*    !*position: absolute;*!*/
+                    /*    width: 50%;*/
+                    /*    height: 4px;*/
+                    /*    background: #d4c400;*/
+                    /*    border-radius: 2px;*/
+                    /*    pointer-events: none;*/
+                    /*}*/
+
+                    /*input[type=range]:focus::-webkit-slider-runnable-track {*/
+                    /*    background: #367ebd;*/
+                    /*}*/
+
+                    input[type=range]::-moz-range-track {
+                        /*width: 100%;*/
+                        height: 4px;
+                        cursor: pointer;
+                        /*box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;*/
+                        background: #e5e5e5;
+                        border-radius: 2px;
+                        border: none;
+                    }
+
+                    input[type=range]::-ms-track {
+                        width: 100%;
+                        height: 8.4px;
+                        cursor: pointer;
+                        background: transparent;
+                        border-color: transparent;
+                        border-width: 16px 0;
+                        color: transparent;
+                    }
+
+                    input[type=range]::-ms-fill-lower {
+                        background: #2a6495;
+                        border: 0.2px solid #010101;
+                        border-radius: 2.6px;
+                        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+                    }
+
+                    input[type=range]:focus::-ms-fill-lower {
+                        background: #3071a9;
+                    }
+
+                    input[type=range]::-ms-fill-upper {
+                        background: #3071a9;
+                        border: 0.2px solid #010101;
+                        border-radius: 2.6px;
+                        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+                    }
+
+                    input[type=range]:focus::-ms-fill-upper {
+                        background: #367ebd;
+                    }
+                </style>
+                <label class="range">
+                    <input type="range"
+                           name="range"
+                           id=""
+                           value="9000"
+                           min="1500"
+                           max="70000"
+                           step="500"
+                           style="width: 100%;">
+                    <div class="fill"></div>
+                </label>
+
+                <!--                <div class="mainCalculator__action">-->
+
+                <!--                    <div class="mainCalculator__background">-->
+                <!--                        <div class="mainCalculator__slider mainCalculator__sum ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">-->
+                <!--                            <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"-->
+                <!--                                 style="width: 48.4536%;"></div>-->
+                <!--                            <span class="ui-slider-handle ui-state-default ui-corner-all"-->
+                <!--                                  tabindex="0"-->
+                <!--                                  style="left: 48.4536%;"></span>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                    <input type="hidden" name=" " value="9000"-->
+                <!--                           class="mainCalculator__val">-->
+                <!--                    <input type="hidden" name=" " value="1500"-->
+                <!--                           class="mainCalculator__min">-->
+                <!--                    <input type="hidden" name=" " value="70000"-->
+                <!--                           class="mainCalculator__max">-->
+                <!--                    <input type="hidden" name=" " value="30000"-->
+                <!--                           class="mainCalculator__mid">-->
+                <!--                    <input type="hidden" name=" " value="500"-->
+                <!--                           class="mainCalculator__step">-->
+                <!--                    <input type="hidden" name=" " value="руб."-->
+                <!--                           class="mainCalculator__sign">-->
+                <!--                    <input type="hidden" name=" " value="руб."-->
+                <!--                           class="mainCalculator__after">-->
+                <!--                    <input type="hidden" name=" " value="30000"-->
+                <!--                           class="mainCalculator__server">-->
+                <!--                </div>-->
+                <div class="mainCalculator__legend">
+                    <div class="mainCalculatorLabel_left mainCalculator__label">
+                        <span class="mainCalculatorLabel__min mainCalculator__label__value">1 500</span><span
+                            class="mainCalculator__label__sign"></span>
+                    </div>
+                    <div class="mainCalculatorLabel_middle mainCalculator__label">
+                        30 000
+                    </div>
+                    <div class="mainCalculatorLabel_right mainCalculator__label">
+                        <span class="mainCalculatorLabel__max mainCalculator__label__value">70 000</span><span
+                            class="mainCalculator__label__sign"></span>
+                    </div>
+                    <div class="mainCalculator__alert">Сумма
+                        свыше 10000 руб. доступна со второго
+                        займа
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--            выберите срок-->
+        <div class="mainCalculator__row">
+            <div class="mainCalculator__box mainCalculator__box_2 mainCalculator__box_swap">
+                <div class="mainCalculator__title"
+                     data-name="days">Выберите срок
+                </div>
+                <div class="mainCalculatorDynamic">
+                    <input type="text" name="days" value="15"
+                           class="mainCalculatorDynamic__input"
+                           id="days">
+                    <div class="mainCalculatorDynamic__after">
+                        недель
+                    </div>
+                </div>
+                <style>
+                    #weeks input[type=range]::-webkit-slider-thumb{
+                        background: #8fc122;
+                        box-shadow: 0 0 0 7px #8fc12280;
+                    }
+                    #weeks input[type=range]::-webkit-slider-thumb:hover {
+                        box-shadow: 0 0 0 10px #8fc12280;
+                    }
+                    #weeks input[type=range]::-moz-range-thumb{
+                        background: #8fc122;
+                        box-shadow: 0 0 0 7px #8fc12280;
+                    }
+                    #weeks input[type=range]::-moz-range-thumb:hover{
+                        box-shadow: 0 0 0 10px #8fc12280;
+                    }
+                </style>
+                <label class="range" id="weeks">
+                    <input type="range"
+                           value="15"
+                           min="5" max="126"
+                           step="1">
+                </label>
+<!--                <div class="mainCalculator__action">-->
+<!--                    <div class="mainCalculator__background">-->
+<!--                        <div class="mainCalculator__date mainCalculator__slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">-->
+<!--                            <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"-->
+<!--                                 style="width: 43.956%;"></div>-->
+<!--                            <span class="ui-slider-handle ui-state-default ui-corner-all"-->
+<!--                                  tabindex="0"-->
+<!--                                  style="left: 43.956%;"></span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <input type="hidden" name=" " value="15"-->
+<!--                           class="mainCalculator__val">-->
+<!--                    <input type="hidden" name=" " value="5"-->
+<!--                           class="mainCalculator__min">-->
+<!--                    <input type="hidden" name=" " value="126"-->
+<!--                           class="mainCalculator__max">-->
+<!--                    <input type="hidden" name=" " value="30"-->
+<!--                           class="mainCalculator__mid">-->
+<!--                    <input type="hidden" name=" " value="70"-->
+<!--                           class="mainCalculator__next">-->
+<!--                    <input type="hidden" name=" " value="1"-->
+<!--                           class="mainCalculator__step">-->
+<!--                    <input type="hidden" name=" " value="нед."-->
+<!--                           class="mainCalculator__sign">-->
+<!--                    <input type="hidden" name=" " value="недель"-->
+<!--                           class="mainCalculator__after">-->
+<!--                    <input type="hidden" name=" " value="10"-->
+<!--                           class="mainCalculator__server">-->
+<!--                </div>-->
+                <div class="mainCalculator__legend">
+                    <div class="mainCalculatorLabel_left mainCalculator__label">
+                        <span class="mainCalculatorLabel__min mainCalculator__label__value">5</span><span
+                            class="mainCalculator__label__sign"> дней</span>
+                    </div>
+                    <div class="mainCalculatorLabel_middle mainCalculator__label">
+                        10 недель
+                    </div>
+                    <div class="mainCalculatorLabel_right mainCalculator__label">
+                        <span class="mainCalculatorLabel__max mainCalculator__label__value">18</span><span
+                            class="mainCalculator__label__sign"> недель</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--            получить деньги-->
+        <div class="mainCalculator__row mainCalculator__row-last">
+            <div class="mainCalculator__info">
+                <div class="mainCalculator__center">
+                    <a href="#" class="btn btn_red mainCalculator__submit">
+                        Получить деньги
+                    </a>
+                </div>
+                <div class="mainCalculator__info__col mainCalculatorInfo__col_1">
+                    <div class="mainCalculator__info__item">
+                        <div class="mainCalculator__info__title">
+                            Вы берете
+                        </div>
+                        <div class="mainCalculator__info__data">
+                            <span class="mainCalculator__info__value">51 000</span><span
+                                class="mainCalculator__info__label"> руб.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainCalculator__info__col mainCalculatorInfo__col_2">
+                    <div class="mainCalculator__info__item">
+                        <div class="mainCalculator__info__title">
+                            До (включительно)
+                        </div>
+                        <div class="mainCalculator__info__data">
+                            <span class="mainCalculator__info__value">28 </span>
+                            <span class="mainCalculator__info__label">января, 2021</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainCalculator__info__col mainCalculatorInfo__col_3 new">
+                    <div class="mainCalculator__info__item">
+                        <div class="mainCalculator__info__title">
+                            Вы возвращаете
+                        </div>
+                        <div class="mainCalculator__info__data">
+                            <div class="mainCalculator__info__data_new"
+                                 style="display: none;">
+                                <span class="mainCalculator__info__value">56 100</span>
+                                <span class="mainCalculator__info__label"> руб.</span>
+                            </div>
+                            <div class="mainCalculator__info__data_default">
+                                <span class="mainCalculator__info__value">56 100</span>
+                                <span class="mainCalculator__info__label"> руб.</span>
                             </div>
                         </div>
                     </div>
-<!--промокод-->
-                    <div class="mainCalculator__promoWrapper">
-                        <label class="mainCalculator__promoLabel"
-                               for="promo-checkbox">У меня есть
-                            промокод</label>
-                        <input class="mainCalculator__promoCheckbox"
-                               type="checkbox" id="promo-checkbox">
-                        <input type="text"
-                               class="mainCalculator__input__promo"
-                               id="promo-code" maxlength="64"
-                               placeholder="Промокод">
-                        <div class="mainCalculator__promoMessage"
-                             id="promo-message"><span
-                                class="validateText">1111</span>
+                </div>
+                <div class="default mainCalculator__info__col mainCalculatorInfo__col_4">
+                    <div class="mainCalculator__info__item">
+                        <div class="mainCalculator__info__title">
+                            Платеж раз в 2 недели
                         </div>
+                        <div class="mainCalculator__info__data">
+                            <div class="mainCalculator__info__data_new">
+                                <span class="mainCalculator__info__value"></span>
+                                <span class="mainCalculator__info__label"> руб.</span>
+                            </div>
+
+                            <div class="mainCalculator__info__data_default">
+                                <span class="mainCalculator__info__value"></span>
+                                <span class="mainCalculator__info__label"> руб.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--промокод-->
+                <div class="mainCalculator__promoWrapper">
+                    <label class="mainCalculator__promoLabel"
+                           for="promo-checkbox">У меня есть
+                        промокод</label>
+                    <input class="mainCalculator__promoCheckbox"
+                           type="checkbox" id="promo-checkbox">
+                    <input type="text"
+                           class="mainCalculator__input__promo"
+                           id="promo-code" maxlength="64"
+                           placeholder="Промокод">
+                    <div class="mainCalculator__promoMessage"
+                         id="promo-message"><span
+                            class="validateText">1111</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<script src="jquery.js"></script>
-<script  src="jquery-ui.js"></script>
-<script src="jsCalculator.js"></script>
-
+<script src="app.js"></script>
 </body>
 </html>

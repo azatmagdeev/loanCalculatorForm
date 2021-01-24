@@ -558,6 +558,8 @@
                 return this.each(function () {
                     var t = V(this).data("tooltipster-ns"),
                         e = t ? V(this).data(t[0]) : null;
+                    console.log('e', e)
+                    console.log('this', this)
                     if (!e) throw new Error("You called Tooltipster's \"" + o[0] + '" method on an uninitialized element');
                     if ("function" != typeof e[o[0]]) throw new Error('Unknown method .tooltipster("' + o[0] + '")');
                     var a = e[o[0]](o[1], o[2]);
@@ -1828,7 +1830,14 @@ if ("/lp/main3/" != window.location.pathname && "/lp/main2/" != window.location.
         init: function () {
             var t;
             R.products = creditSettingsList, R.currentProduct = null, R.minSum = null, R.maxSum = null, R.calcSum = 0;
-            for (var e = R.calcDays = 0; e < R.products.length; e++) t = R.products[e], (null == R.minSum || R.minSum > t.minCost) && (R.minSum = t.minCost), (null == R.maxSum || R.maxSum < t.maxCost) && (R.maxSum = t.maxCost), 1 == t.current && (R.currentProduct = t);
+            for (var e = R.calcDays = 0; e < R.products.length; e++) {
+                t = R.products[e],
+                (null == R.minSum || R.minSum > t.minCost) && (R.minSum = t.minCost),
+                (null == R.maxSum || R.maxSum < t.maxCost) && (R.maxSum = t.maxCost),
+                1 == t.current && (R.currentProduct = t);
+
+            }
+            console.log(this)
             mmCalculatorNew.currentProduct = R.currentProduct, this.mainCalculatorSum.init(), this.mainCalculatorDate.init()
         },
         mainCalculatorSum: function () {
@@ -1861,6 +1870,7 @@ if ("/lp/main3/" != window.location.pathname && "/lp/main2/" != window.location.
             }
 
             function x() {
+
                 c.hasClass("ui-slider") && (c.slider("destroy"), $(".mainCalculatorDynamic", t).remove())
             }
 
@@ -1876,7 +1886,10 @@ if ("/lp/main3/" != window.location.pathname && "/lp/main2/" != window.location.
                         k(t, e)
                     },
                     change: function (t, e) {
+                        console.log(k)
+                        console.log(pageIsLoaded)
                         if (k(t, e), $("body").trigger("slider-amount-changed"), pageIsLoaded) {
+
                             setCookie("mm_calc_amount", $("#money").val());
                             var a = parseInt($("#days").val());
                             "TWO_WEEKS" == mmCalculatorNew.currentProduct.period && 70 == (a *= 7) && (a += 10), setCookie("mm_calc_days", a)
@@ -1904,7 +1917,34 @@ if ("/lp/main3/" != window.location.pathname && "/lp/main2/" != window.location.
                     path: "/"
                 })) : a < 10500 && "" == $("#promo-code").val() ? (l.addClass("mainCalculator_new_client_rabat25"), l.addClass("mainCalculator_new_client"), $(".mainCalculator__promoLabel").addClass("mainCalculator__promoLabel-active"), $(".mainCalculator__promoCheckbox").prop("checked", !0), $(".mainCalculator__info__data_default").addClass("promoAccept").removeClass("promoAcceptLP").removeAttr("style"), $(".mainCalculator__info__data_new > span").css("display", "inline"), $("#promo-code").val("rabato25").focus().blur()) : a < 10500 && "rabato25" != $("#promo-code").val() && (l.removeClass("mainCalculator_new_client_rabat25"), l.addClass("mainCalculator_new_client")) : 1e4 < a ? (l.removeClass("mainCalculator_new_client"), 0 < $("#promo-code").length && "OVERZAIM" === $("#promo-code").val().toUpperCase() && ($(".mainCalculator__promoLabel").removeClass("mainCalculator__promoLabel-active"), $(".mainCalculator__promoCheckbox").prop("checked", !1), $(".mainCalculator__info__data_default").removeClass("promoAccept").addClass("promoAcceptLP").css("color", "#333"), $(".mainCalculator__info__data_new > span").css("display", "none"), $("#promo-code").val("").focus().blur(), $.removeCookie("promocode", {
                     path: "/" //промо
-                }))) : (l.addClass("mainCalculator_new_client"), 0 < $("#promo-code").length && "" === $("#promo-code").val() && "OVERZAIM" === $.cookie("checkpromocode") && 1 < parseInt($("#days").val()) && ($(".mainCalculator__promoLabel").addClass("mainCalculator__promoLabel-active"), $(".mainCalculator__promoCheckbox").prop("checked", !0), $(".mainCalculator__info__data_default").addClass("promoAccept").removeClass("promoAcceptLP").removeAttr("style"), $(".mainCalculator__info__data_new > span").css("display", "inline"), $("#promo-code").val("OVERZAIM").focus().blur())), 3e4 < a ? l.removeClass("mainCalculator_limit") : (l.addClass("mainCalculator_limit"), W = a), e.value, u.html(r), m.val(a), p.val(a).trigger("change"), o = c, n = e.value, i = _, o.hasClass("mainCalculator__sum") && !$(".mainCalculator__help").hasClass("closed") && (i < n ? $(".mainCalculator__help .mainCalculator__tooltip.tooltipstered").tooltipster("show") : $(".mainCalculator__help .mainCalculator__tooltip.tooltipstered").tooltipster("hide")), E && A && (3e4 < a ? E.slider("value") <= Math.round(F / N) && E.slider("value", Math.round(F / N) + 3) : E.slider("value") > Math.round(F / N) && E.slider("value", Math.round(F / N) - 1), a < 10001 && E.slider("value") > 25 / N && E.slider("value", 25 / N)), R.calcSum = a, calcRecalc()
+                }))) : (l.addClass("mainCalculator_new_client"),
+                0 < $("#promo-code").length &&
+                "" === $("#promo-code").val() &&
+                "OVERZAIM" === $.cookie("checkpromocode") &&
+                1 < parseInt($("#days").val())
+                && ($(".mainCalculator__promoLabel").addClass("mainCalculator__promoLabel-active"),
+                    $(".mainCalculator__promoCheckbox").prop("checked", !0),
+                    $(".mainCalculator__info__data_default").addClass("promoAccept")
+                        .removeClass("promoAcceptLP").removeAttr("style"),
+                    $(".mainCalculator__info__data_new > span").css("display", "inline"),
+                    $("#promo-code").val("OVERZAIM").focus().blur())),
+                    3e4 < a ? l.removeClass("mainCalculator_limit")
+                        : (l.addClass("mainCalculator_limit"), W = a),
+                    e.value,
+                    u.html(r),
+                    m.val(a),
+                    p.val(a).trigger("change"), o = c, n = e.value, i = _,
+                o.hasClass("mainCalculator__sum") &&
+                !$(".mainCalculator__help").hasClass("closed") &&
+                (i < n ? $(".mainCalculator__help .mainCalculator__tooltip.tooltipstered").tooltipster("show")
+                    : $(".mainCalculator__help .mainCalculator__tooltip.tooltipstered").tooltipster("hide")),
+                E && A && (3e4 < a ? E.slider("value") <= Math.round(F / N)
+                    && E.slider("value", Math.round(F / N) + 3)
+                    : E.slider("value") > Math.round(F / N)
+                    && E.slider("value", Math.round(F / N) - 1),
+                a < 10001 && E.slider("value") > 25 / N
+                && E.slider("value", 25 / N)),
+                    R.calcSum = a, calcRecalc()
             }
 
             function D(e, t) {
@@ -1917,7 +1957,7 @@ if ("/lp/main3/" != window.location.pathname && "/lp/main2/" != window.location.
 
             return {
                 init: function () {
-                    pageIsLoaded || b(), x(), M(), $(window).resize(function () {
+                    pageIsLoaded || b(), M(), x(), $(window).resize(function () {
                         $(window).width() !== g && (g = $(window).width(), b(), x(), M())
                     })
                 }
@@ -2026,8 +2066,10 @@ function getCookie(t) {
 }
 
 $(document).ready(function () {
+    console.log(1111111111111111)
     var o = $(".mainCalculator"),
         t = $(".mainCalculator__tooltip"),
+
         e = {
             container: $(".mainCalculator__question"),
             buttonOpen: $(".mainCalculator__question__title a"),
@@ -2051,8 +2093,24 @@ $(document).ready(function () {
                 this.setupListner()
             }
         };
+    $(this).tooltipster({
+        trigger: "click",
+        position: "top",
+        maxWidth: 264,
+        zIndex: 10,
+        arrowColor: "#FFF",
+        delay: 0,
+        onlyOne: !0,
+        autoClose: !1,
+        functionReady: function (t, e) {
+            e.on("click", function () {
+                t.tooltipster("hide"), t.hasClass("help__tooltip") && $(".mainCalculator__help").addClass("closed")
+            })
+        }
+    })
     if (!window.creditSettingsList) throw new Error("Отсутствует конфигурационный файл!");
-    o.length && (mmCalculatorNew.init(), o.find(".mainCalculator__submit").on("click", function () {
+    o.length &&
+    (mmCalculatorNew.init(), o.find(".mainCalculator__submit").on("click", function () {
         var t, e, a;
         t = o.find(".mainCalculator__box_1").find(".mainCalculator__server").val(), e = o.find(".mainCalculator__box_2").find(".mainCalculator__server").val(), a = o.find(".mainCalculatorInfo__col_2 .mainCalculator__info__value").html() + o.find(".mainCalculatorInfo__col_2 .mainCalculator__info__label").html(), "TWO_WEEKS" == mmCalculatorNew.currentProduct.period && (e *= 7), App.setCookie("mm_calc_amount", t, {
             path: "/"
@@ -2061,25 +2119,13 @@ $(document).ready(function () {
         }), App.setCookie("mm_return_day", a, {
             path: "/"
         }), window.location.href = "/secure/registration"
-    })), t.each(function (t, e) {
-        $(this).click(function (t) {
-            t.preventDefault()
-        }), $(this).tooltipster({
-            trigger: "click",
-            position: "top",
-            maxWidth: 264,
-            zIndex: 10,
-            arrowColor: "#FFF",
-            delay: 0,
-            onlyOne: !0,
-            autoClose: !1,
-            functionReady: function (t, e) {
-                e.on("click", function () {
-                    t.tooltipster("hide"), t.hasClass("help__tooltip") && $(".mainCalculator__help").addClass("closed")
-                })
-            }
-        })
-    }), e.container.length && e.init(), pageIsLoaded = !0
+    })), console.log('t', t),
+        t.each(function (t, e) {
+
+            $(this).click(function (t) {
+                t.preventDefault()
+            })
+        }), e.container.length && e.init(), pageIsLoaded = !0
 }), $(".productItemsbuttonCoockie > a").on("click", function () {
     var t = $(".mainCalculator__box_1 .mainCalculatorDynamic__input").val() || 9e3,
         e = parseInt(t),
