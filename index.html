@@ -26,7 +26,7 @@
                 <div class="mainCalculatorDynamic">
                     <input type="text" name="money" value="300 000"
                            class="mainCalculatorDynamic__input"
-                           id="money">
+                           id="money-input">
                     <div class="mainCalculatorDynamic__after">руб.</div>
                 </div>
                 <div class="mainCalculator__help">
@@ -186,8 +186,9 @@
                 </style>
                 <label class="range">
                     <input type="range"
+                           id="money-range"
                            name="range"
-                           id=""
+
                            value="1500000"
                            min="300000"
                            max="150000000"
@@ -252,7 +253,7 @@
                 <div class="mainCalculatorDynamic">
                     <input type="text" name="days" value="15"
                            class="mainCalculatorDynamic__input"
-                           id="days">
+                           id="months-input">
                     <div class="mainCalculatorDynamic__after">
                         месяцев
                     </div>
@@ -277,6 +278,7 @@
                     <input type="range"
                            value="15"
                            min="3" max="360"
+                           id="months-range"
                            step="1">
                 </label>
 <!--                <div class="mainCalculator__action">-->
@@ -326,69 +328,73 @@
         <!--            получить деньги-->
         <div class="mainCalculator__row mainCalculator__row-last">
             <div class="mainCalculator__info">
+
+                <div class="mainCalculator__info__col mainCalculatorInfo__col_1">
+                    <div class="mainCalculator__info__item">
+                        <div class="mainCalculator__info__title">
+                            Ежемесячный платеж
+                        </div>
+                        <div class="mainCalculator__info__data">
+                            <span class="mainCalculator__info__value" id="monthly">51 000</span><span
+                                class="mainCalculator__info__label"> руб.</span>
+                        </div>
+                    </div>
+                </div>
+<!--                <div class="mainCalculator__info__col mainCalculatorInfo__col_2">-->
+<!--                    <div class="mainCalculator__info__item">-->
+<!--                        <div class="mainCalculator__info__title">-->
+<!--                            До (включительно)-->
+<!--                        </div>-->
+<!--                        <div class="mainCalculator__info__data">-->
+<!--                            <span class="mainCalculator__info__value">28 </span>-->
+<!--                            <span class="mainCalculator__info__label">января, 2021</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="mainCalculator__info__col mainCalculatorInfo__col_3 new">
+                    <div class="mainCalculator__info__item">
+                        <div class="mainCalculator__info__title">
+                            Всего в день
+                        </div>
+                        <div class="mainCalculator__info__data">
+                            <div class="mainCalculator__info__data_default">
+                                <span class="mainCalculator__info__value" id="daily">56 100</span>
+                                <span class="mainCalculator__info__label"> руб.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label>
+                        <input type="text" placeholder="Имя">
+                    </label>
+                    <label>
+                        <input type="tel" placeholder="Телефон">
+                    </label>
+                </div>
                 <div class="mainCalculator__center">
                     <a href="#" class="btn btn_red mainCalculator__submit">
                         Получить деньги
                     </a>
                 </div>
-                <div class="mainCalculator__info__col mainCalculatorInfo__col_1">
-                    <div class="mainCalculator__info__item">
-                        <div class="mainCalculator__info__title">
-                            Вы берете
-                        </div>
-                        <div class="mainCalculator__info__data">
-                            <span class="mainCalculator__info__value">51 000</span><span
-                                class="mainCalculator__info__label"> руб.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="mainCalculator__info__col mainCalculatorInfo__col_2">
-                    <div class="mainCalculator__info__item">
-                        <div class="mainCalculator__info__title">
-                            До (включительно)
-                        </div>
-                        <div class="mainCalculator__info__data">
-                            <span class="mainCalculator__info__value">28 </span>
-                            <span class="mainCalculator__info__label">января, 2021</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="mainCalculator__info__col mainCalculatorInfo__col_3 new">
-                    <div class="mainCalculator__info__item">
-                        <div class="mainCalculator__info__title">
-                            Вы возвращаете
-                        </div>
-                        <div class="mainCalculator__info__data">
-                            <div class="mainCalculator__info__data_new"
-                                 style="display: none;">
-                                <span class="mainCalculator__info__value">56 100</span>
-                                <span class="mainCalculator__info__label"> руб.</span>
-                            </div>
-                            <div class="mainCalculator__info__data_default">
-                                <span class="mainCalculator__info__value">56 100</span>
-                                <span class="mainCalculator__info__label"> руб.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="default mainCalculator__info__col mainCalculatorInfo__col_4">
-                    <div class="mainCalculator__info__item">
-                        <div class="mainCalculator__info__title">
-                            Платеж раз в 2 недели
-                        </div>
-                        <div class="mainCalculator__info__data">
-                            <div class="mainCalculator__info__data_new">
-                                <span class="mainCalculator__info__value"></span>
-                                <span class="mainCalculator__info__label"> руб.</span>
-                            </div>
+<!--                <div class="default mainCalculator__info__col mainCalculatorInfo__col_4">-->
+<!--                    <div class="mainCalculator__info__item">-->
+<!--                        <div class="mainCalculator__info__title">-->
+<!--                            Платеж раз в 2 недели-->
+<!--                        </div>-->
+<!--                        <div class="mainCalculator__info__data">-->
+<!--                            <div class="mainCalculator__info__data_new">-->
+<!--                                <span class="mainCalculator__info__value"></span>-->
+<!--                                <span class="mainCalculator__info__label"> руб.</span>-->
+<!--                            </div>-->
 
-                            <div class="mainCalculator__info__data_default">
-                                <span class="mainCalculator__info__value"></span>
-                                <span class="mainCalculator__info__label"> руб.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!--                            <div class="mainCalculator__info__data_default">-->
+<!--                                <span class="mainCalculator__info__value"></span>-->
+<!--                                <span class="mainCalculator__info__label"> руб.</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <!--промокод-->
                 <div class="mainCalculator__promoWrapper">
                     <label class="mainCalculator__promoLabel"
