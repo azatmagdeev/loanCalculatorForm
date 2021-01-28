@@ -99,7 +99,7 @@ class Calculator {
             if (!lead.validate()) return false
             this.sendRequest()
         })
-        lead.phoneEl.addEventListener('input',()=>{
+        lead.phoneEl.addEventListener('input', () => {
 
         })
     }
@@ -111,19 +111,28 @@ class Calculator {
         data.append('Телефон', this.lead.phoneEl.value)
         data.append('Сумма', this.sum.value)
         data.append('Период(мес)', this.period.value)
-        data.append('Долг', this.result.loan)
-        data.append('Платеж(мес)', this.result.monthly)
-        data.append('В день', this.period.daily)
+        data.append('Долг', showThree(Math.ceil(this.result.loan)))
+        data.append('Платеж(мес)', showThree(Math.ceil(this.result.monthly)))
+        data.append('В день', showThree(Math.ceil(this.period.daily)))
 
-        const response = await fetch('', {
+        const response = await fetch('phpCalculator.php', {
             method: 'POST',
             body: data
         });
 
         const result = await response.json();
 
-        alert(result.message)
+        console.log(result)
     }
+}
+
+function showThree(num) {
+    num += ''
+    let res = ''
+    for (let i = num.length % 3, j = 0; i <= num.length; j = i, i += 3) {
+        res += num.slice(j, i) + ' '
+    }
+    return res
 }
 
 new Calculator(
@@ -149,13 +158,6 @@ new Calculator(
 )
 
 
-function showThree(num) {
-    num += ''
-    let res = ''
-    for (let i = num.length % 3, j = 0; i <= num.length; j = i, i += 3) {
-        res += num.slice(j, i) + ' '
-    }
-    return res
-}
+
 
 
