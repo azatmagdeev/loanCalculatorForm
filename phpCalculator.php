@@ -15,7 +15,7 @@ $mail->
 $mail->Host   = 'smtp.yandex.ru';  // Адрес SMTP сервера
 $mail->SMTPAuth   = true;          // Enable SMTP authentication
 $mail->Username   = 'azatmagdeev';       // ваше имя пользователя (без домена и @)
-$mail->Password   = 'akbaj22443226!';    // ваш пароль
+$mail->Password   = '*******';    // ваш пароль
 $mail->SMTPSecure = 'ssl';         // шифрование ssl
 $mail->Port   = 465;               // порт подключения
 $mail->SMTPDebug = 1;
