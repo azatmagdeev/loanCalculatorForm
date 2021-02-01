@@ -104,30 +104,40 @@ class Calculator {
         })
     }
 
-
     async sendRequest() {
         const data = new FormData()
         data.append('Имя', this.lead.nameEl.value)
         data.append('Телефон', this.lead.phoneEl.value)
-        data.append('Сумма', this.sum.value)
+        data.append('Сумма', showThree(this.sum.value))
         data.append('Период(мес)', this.period.value)
         data.append('Долг', showThree(Math.ceil(this.result.loan)))
         data.append('Платеж(мес)', showThree(Math.ceil(this.result.monthly)))
-        data.append('В день', showThree(Math.ceil(this.period.daily)))
+        data.append('В день', showThree(Math.ceil(this.result.daily)))
 
-        const response = await fetch('phpCalculator.php', {
-            method: 'POST',
-            body: data
-        });
+        const response = await fetch(
+            'http://s960043q.beget.tech/loanCalculatorForm/phpCalculator.php',
+            {
+                method: 'POST',
+                body: data
+            }
+        );
 
-        const result = await response.json();
+        console.log(response.status)
+        console.log(response.statusText)
 
-        console.log(result)
+       if(response.status >= 200 && response.status < 300){
+           window.result = await response.json()
+           console.log(result)
+       }else{
+
+       }
+
+
     }
 }
 
 function showThree(num) {
-    num += ''
+    num = String(num)
     let res = ''
     for (let i = num.length % 3, j = 0; i <= num.length; j = i, i += 3) {
         res += num.slice(j, i) + ' '
